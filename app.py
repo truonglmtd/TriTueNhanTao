@@ -2,9 +2,7 @@ import streamlit as st
 from ultralytics import YOLO
 from PIL import Image
 
-model = YOLO(
-    "runs/detect/runs/volleyball_yolov85/weights/best.pt"
-)
+model = YOLO("yolov8s.pt")
 
 st.title("Hệ thống phát hiện người chơi, trọng tài và bóng bằng YOLOv8")
 
