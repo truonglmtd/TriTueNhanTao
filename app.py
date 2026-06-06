@@ -36,7 +36,7 @@ st.markdown('<div class="sub-title">Phát hiện người chơi, trọng tài v�
 
 @st.cache_resource
 def load_model():
-    return YOLO("yolov8s.pt")   # nếu có best.pt thì đổi thành YOLO("best.pt")
+   return YOLO("yolov8n.pt") # nếu có best.pt thì đổi thành YOLO("best.pt")
 
 model = load_model()
 
