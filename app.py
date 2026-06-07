@@ -11,45 +11,6 @@ st.set_page_config(
     layout="wide"
 )
 
-# ================= LOGIN =================
-PASSWORD = "123456"  # đổi mật khẩu tại đây
-
-if "authenticated" not in st.session_state:
-    st.session_state["authenticated"] = False
-
-if not st.session_state["authenticated"]:
-    st.markdown("""
-    <style>
-    .login-box {
-        max-width: 450px;
-        margin: auto;
-        margin-top: 100px;
-        padding: 35px;
-        border-radius: 20px;
-        background: #111827;
-        border: 1px solid #374151;
-        text-align: center;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
-    st.markdown("""
-    <div class="login-box">
-        <h1>🔐 Volleyball AI</h1>
-        <p>Đăng nhập để sử dụng hệ thống nhận diện</p>
-    </div>
-    """, unsafe_allow_html=True)
-
-    password = st.text_input("Nhập mật khẩu", type="password")
-
-    if st.button("Đăng nhập", use_container_width=True):
-        if password == PASSWORD:
-            st.session_state["authenticated"] = True
-            st.rerun()
-        else:
-            st.error("Sai mật khẩu!")
-
-    st.stop()
 
 # ================= CSS =================
 st.markdown("""
@@ -118,12 +79,7 @@ with st.sidebar:
     st.caption("✔ Chỉ nhận JPG/JPEG/PNG")
     st.caption("✔ Giới hạn file 10MB")
     st.caption("✔ Không lưu ảnh người dùng")
-    st.caption("✔ Có đăng nhập mật khẩu")
 
-    st.divider()
-    if st.button("Đăng xuất", use_container_width=True):
-        st.session_state["authenticated"] = False
-        st.rerun()
 
 # ================= TABS =================
 tab1, tab2, tab3, tab4 = st.tabs([
@@ -267,12 +223,11 @@ with tab4:
     Ứng dụng được bổ sung các kiểm soát bảo mật cơ bản:
     """)
 
-    st.write("✔ Có màn hình đăng nhập")
     st.write("✔ Kiểm tra định dạng file đầu vào")
     st.write("✔ Giới hạn dung lượng upload")
     st.write("✔ Không lưu ảnh người dùng")
     st.write("✔ Không hiển thị lỗi kỹ thuật chi tiết")
-    st.write("✔ Có nút đăng xuất")
+
 
 st.markdown("""
 <div class="footer">
