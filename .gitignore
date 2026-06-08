@@ -1,0 +1,15 @@
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# YOLO output
+runs/
+
+# Model weights
+*.pt
+
+# Dataset cache
+*.cache
