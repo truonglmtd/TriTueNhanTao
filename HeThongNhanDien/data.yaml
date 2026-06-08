@@ -1,9 +1,0 @@
-path: dataset
-train: images/train
-val: images/val
-test: images/test
-
-names:
-  0: Player
-  1: Referee
-  2: Ball
